@@ -1,5 +1,6 @@
 package com.narxoz.rpg.combatant;
 
+import com.narxoz.rpg.artifact.Artifact;
 import com.narxoz.rpg.artifact.Inventory;
 
 /**
@@ -155,8 +156,8 @@ public class Hero {
      * @return a HeroMemento snapshot, or null in the scaffold
      */
     public HeroMemento createMemento() {
-        // TODO: capture the full mutable state into a HeroMemento.
-        return null;
+        return new HeroMemento(name, hp, mana, gold, maxHp, attackPower, defense,
+                inventory.getArtifacts());
     }
 
     /**
@@ -165,7 +166,15 @@ public class Hero {
      * @param memento the snapshot to restore from
      */
     public void restoreFromMemento(HeroMemento memento) {
-        // TODO: read the snapshot and restore the hero's mutable state.
+        if (memento == null) return;
+        this.hp = memento.getHp();
+        this.mana = memento.getMana();
+        this.gold = memento.getGold();
+        Inventory restored = new Inventory();
+        for (Artifact a : memento.getInventorySnapshot()) {
+            restored.addArtifact(a);
+        }
+        this.inventory = restored;
     }
 
     @Override
