@@ -3,12 +3,6 @@ package com.narxoz.rpg.combatant;
 import com.narxoz.rpg.artifact.Artifact;
 import java.util.List;
 
-/**
- * Immutable snapshot of a hero's mutable state.
- *
- * This class intentionally lives next to {@link Hero} so the originator can
- * restore itself without exposing internals to other packages.
- */
 public final class HeroMemento {
 
     private final String name;

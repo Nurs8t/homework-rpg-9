@@ -15,7 +15,6 @@ public class ChronomancerEngine {
     public VaultRunResult runVault(List<Hero> party) {
         int artifactsAppraised = 0, mementosCreated = 0, restoredCount = 0;
 
-        // Build vault inventory (6 artifacts, 5 types)
         Inventory vault = new Inventory();
         vault.addArtifact(new Weapon("Chrono Blade",    120, 8,  12));
         vault.addArtifact(new Potion("Elixir of Ages",   35, 1,  60));

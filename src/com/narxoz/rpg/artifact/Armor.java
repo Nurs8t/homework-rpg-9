@@ -1,8 +1,6 @@
 package com.narxoz.rpg.artifact;
 
-/**
- * A protective suit, plate, or enchanted shield.
- */
+
 public class Armor extends Artifact {
 
     private final int defenseBonus;
