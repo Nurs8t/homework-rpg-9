@@ -1,4 +1,4 @@
-package com.narxoz.rpg.artifact.visitor.;
+package com.narxoz.rpg.artifact.visitor;
 
 import com.narxoz.rpg.artifact.*;
 
